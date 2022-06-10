@@ -1,0 +1,28 @@
+{% block title %} Компании-продукты {% endblock %}
+{% block body %}
+    <div>
+    <div>
+    <table>
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Название</th>
+            <th scope="col">Брэнд</th>
+            <th scope="col">Компания поставщик</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for prod in data.products %}
+            <tr>
+                <th scope="row">{{ prod.id }}</th>
+                <td>{{ prod.title }}</td>
+                <td>{{ prod.name }}</td>
+                <td>{{ prod.brand }}</td>
+                <td>{{ prod.comp.name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
+{% endblock %}

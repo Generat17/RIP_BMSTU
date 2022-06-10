@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список компаний</title>
+</head>
+<body>
+<div class="content-wrapper">
+    <a href="/">На главную</a>
+    <ul>
+    {% for company in companys %}
+        <li>
+        <a href="/company/{{ company.id }}">{{ company.name }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+</body>
+</html>

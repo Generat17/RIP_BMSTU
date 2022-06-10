@@ -1,0 +1,13 @@
+{% load static %}
+
+{% block title %}Список компаний:{% endblock %}
+
+{% block content %}
+<ul>
+    {% for company in data.companys %}
+    <li>
+        <a href="./company/{{company.id}}">{{ company.name }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

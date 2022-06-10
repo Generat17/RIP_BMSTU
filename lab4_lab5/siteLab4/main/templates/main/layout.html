@@ -1,0 +1,35 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+<body>
+    <aside>
+        <img src="{% static 'main/img/logo.jpg' %}" alt="Лого">
+        <span class="logo">Мороженое</span>
+        <h3>Навигация</h3>
+        <ul>
+            <a href="{% url 'home' %}"><li><i class="fas fa-home"></i> Главная</li></a>
+            <h2>Виды мороженого:</h2>
+            <ul>
+                <a href="{% url 'news-detail' 1 %}"><li><i class="fas fa-ice-cream"></i> Пломбир</li></a>
+                <a href="{% url 'news-detail' 2 %}"><li><i class="fas fa-icicles"></i> Молочное и сливочное мороженое</li></a>
+                <a href="{% url 'news-detail' 3 %}"><li><i class="fas fa-bug"></i> Сорбет</li></a>
+                <a href="{% url 'news-detail' 4 %}"><li><i class="fab fa-angellist"></i> Щербет</li></a>
+            </ul>
+        </ul>
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

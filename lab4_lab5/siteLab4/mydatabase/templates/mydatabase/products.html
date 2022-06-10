@@ -1,0 +1,13 @@
+{% load static %}
+
+{% block title %}Список продуктов:{% endblock %}
+
+{% block content %}
+<ul>
+    {% for product in data.products %}
+    <li>
+        <a href="./product/{{product.id}}">{{ product.name }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
